@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/componeer/componeer.git
-  revision: 662e16cdf7853d57d395355734e57aa8f50bd826
+  revision: fa02ee1d3fe82ca39ee9243ca7d5b7146a970398
   branch: main
   specs:
-    componeer (0.0.1a)
+    componeer (0.0.2a)
       rails (>= 7.0.5)
 
 GEM
