@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/componeer/componeer.git
+  revision: 662e16cdf7853d57d395355734e57aa8f50bd826
+  branch: main
+  specs:
+    componeer (0.0.1a)
+      rails (>= 7.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,7 +74,6 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -170,11 +177,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    web-console (4.2.0)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -186,6 +188,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  componeer!
   debug
   importmap-rails
   jbuilder
@@ -195,7 +198,6 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails
   tzinfo-data
-  web-console
 
 RUBY VERSION
    ruby 3.1.3p185

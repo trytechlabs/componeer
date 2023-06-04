@@ -1,24 +1,11 @@
-# README
+# Componeer Docs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app allows you to both consult the componeer styleguide and help you in the development
+process.
 
-Things you may want to cover:
+### Use componeer gem locally
 
-* Ruby version
+  For example, if you cloned the gem inside your home directory, under the componeer dir, you could
+  run this command bellow:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    $ bundle config set local.componeer ~/componeer/componeer
