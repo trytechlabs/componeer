@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.3"
 
-gem "componeer", github: "componeer/componeer", branch: "main"
+gem "componeer", github: "componeer/componeer", branch: `git rev-parse --abbrev-ref HEAD`.strip
 gem "rails", "~> 7.0.5"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
@@ -18,3 +18,5 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
+
+gem "tailwindcss-rails", "~> 2.0"
