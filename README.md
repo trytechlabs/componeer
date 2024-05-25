@@ -1,11 +1,37 @@
-# Componeer Docs
+# Componeer
+A non-intrusive gem for component-based development in Ruby on Rails.
 
-This app allows you to both consult the componeer styleguide and help you in the development
-process.
+## Description
+Componeer is a non-intrusive gem that enhances component-based development
+in Ruby on Rails applications. It empowers developers to effortlessly build modular, reusable,
+and highly maintainable UI components within their Rails projects. With an intuitive syntax and
+comprehensive features, Componeer simplifies component management, promotes code reusability,
+and enhances the scalability and flexibility of your Rails applications.
 
-### Use componeer gem locally
+## How to usage
+Componeer is based on TailwindCSS framework but it doesn't enforce you an instalation for this
+library, unless you ask for it.
 
-  For example, if you cloned the gem inside your home directory, under the componeer dir, you could
-  run this command bellow:
+To begin using this gem, add this line to your application's Gemfile:
 
-    $ bundle config set local.componeer ~/componeer/componeer
+```ruby
+gem "componeer"
+```
+
+And then execute:
+```bash
+$ bundle
+```
+
+Now, you can use our different installers for the things that you might want:
+
+### TailwindCSS
+```
+$ bundle exec rails componeer:install:tailwindcss
+```
+
+## Contributing
+Internal only at this moment
+
+## License
+TBD
