@@ -8,6 +8,7 @@ gem 'componeer', path: 'gems/componeer'
 gem 'bootsnap', require: false
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'lookbook', '~> 2.0.5'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.5'
 gem 'sprockets-rails'
