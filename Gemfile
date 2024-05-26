@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-gem 'componeer', path: 'gems/componeer'
+gem 'componeer', path: './gems/componeer'
 
 gem 'bootsnap', require: false
 gem 'cssbundling-rails', '~> 1.4'
