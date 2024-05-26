@@ -8,6 +8,7 @@ echo 'Copying credentials...'
 
 cp /etc/secrets/master.key ./config/credentials/master.key
 
-bundle install --no-deployment
+bundle config set --local deployment 'false'
+bundle install
 ./bin/rails assets:precompile
 ./bin/rails assets:clean
