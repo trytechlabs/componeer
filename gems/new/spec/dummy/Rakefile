@@ -1,0 +1,2 @@
+task :environment do
+end
