@@ -10,7 +10,7 @@ echo 'Node version: ' $(node -v)
 echo 'Yarn version: ' $(yarn -v)
 echo '-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-'
 echo 'Project files tree:'
-ls -la
+find $PWD
 echo '-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-'
 echo 'Installing dependencies'
 echo 'Copying credentials...'
