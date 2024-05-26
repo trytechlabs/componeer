@@ -21,7 +21,7 @@
     "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "build:js": "node config/assets_builders/esbuild.config.mjs",
+    "build": "node config/assets_builders/esbuild.config.mjs",
     "build:css": "node config/assets_builders/cssbuild.config.mjs"
   },
   "prettier": {
