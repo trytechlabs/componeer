@@ -1,25 +1,17 @@
 module Componeer
-  def self.register(*args)
-    registry.register(*args)
-  end
-
-  def self.registry
-    @registry ||= Registry.new
-  end
-
   class Registry
-    delegate :key?, to: :@components
+    delegate :key?, to: :components
+
+    attr_reader :components
 
     def initialize
       @components = {}
     end
 
     def register(name, component_klazz)
-      @components[name] = component_klazz
+      components[name] = component_klazz
     end
 
-    def [](name)
-      @components[name]
-    end
+    delegate :[], to: :components
   end
 end
