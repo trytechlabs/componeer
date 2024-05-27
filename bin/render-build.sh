@@ -16,6 +16,7 @@ echo 'Installing dependencies'
 echo 'Copying credentials...'
 
 cp /etc/secrets/master.key ./config/credentials/master.key
+cp Procfile.dev.example Procfile.dev
 
 bundle config set --local deployment 'false'
 bundle install

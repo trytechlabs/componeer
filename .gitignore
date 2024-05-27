@@ -50,3 +50,5 @@ Procfile.*
 /config/credentials/*.key
 
 /config/credentials/production.key
+
+.tool-versions
