@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'net/http'
+require 'uri'
+
+rails_app_path = File.expand_path('../../config/environment', __FILE__)
+require rails_app_path
+
+class GemDeployer
+  def deploy
+    Dir.chdir('gems/componeer') do
+      puts "Switched to #{Dir.pwd}"
+      build_gem
+      gem_file = get_gem_file
+      push_gem(gem_file)
+      cleanup(gem_file)
+    end
+  end
+
+  private
+
+  def build_gem
+    puts 'Building the gem...'
+    system('gem build componeer.gemspec')
+  end
+
+  def get_gem_file
+    gem_files = Dir.glob('*.gem')
+    if gem_files.empty?
+      puts "Gem file not found. Exiting."
+      exit 1
+    end
+    gem_files.last
+  end
+
+  def push_gem(gem_file)
+    puts "Pushing the gem to RubyGems.org..."
+    system("gem push #{gem_file}")
+  end
+
+  def cleanup(gem_file)
+    puts "Cleaning up..."
+    File.delete(gem_file)
+    puts "Cleanup completed."
+  end
+end
+
+GemDeployer.new.deploy

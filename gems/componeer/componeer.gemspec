@@ -5,8 +5,8 @@ Gem::Specification.new do |spec|
 
   spec.name        = 'componeer'
   spec.version     = Componeer::VERSION
-  spec.authors     = ['Andre Rodrigues', 'Mauricio Pereira']
-  spec.email       = ['andrerpbts@gmail.com', 'mauriciopdvg@gmail.com']
+  spec.authors     = ['Andre Rodrigues', 'Mauricio Pereira', 'Lucas Pesqueira']
+  spec.email       = ['andrerpbts@gmail.com', 'mauriciopdvg@gmail.com', 'pesqueira.lucas@gmail.com']
   spec.homepage    = 'https://docs.componeer.me'
   spec.summary     = 'A non-intrusive gem for component-based development in Ruby on Rails'
   spec.description = 'Componeer is a non-intrusive gem that enhances component-based development
@@ -25,6 +25,6 @@ Gem::Specification.new do |spec|
     Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   end
 
-  spec.add_dependency 'inline_svg', '>= 1.9.0'
-  spec.add_dependency 'view_component', '>= 3.1.0'
+  spec.add_runtime_dependency 'inline_svg', '~> 1.9', '>= 1.9.0'
+  spec.add_runtime_dependency 'view_component', '~> 3.1', '>= 3.1.0'
 end
