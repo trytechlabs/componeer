@@ -1,9 +1,9 @@
 module Componeer
   class Configuration
-    attr_writer :enable_lookbook
+    attr_writer :include_componeer_helpers
 
-    def lookbook_enabled?
-      @enable_lookbook || false
+    def include_componeer_helpers?
+      @include_componeer_helpers.nil? ? true : @include_componeer_helpers.present?
     end
   end
 end

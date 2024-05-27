@@ -3,6 +3,7 @@ module Componeer
     def componeer
       @componeer ||= Helper.new(self)
     end
+    alias c componeer unless method_defined?(:c)
 
     class Helper
       delegate :render, to: :view_context

@@ -1,31 +1,34 @@
 module Componeer
   class BaseComponent < ViewComponent::Base
-    private
+    def self.register_as(name)
+      name = name.to_s.to_sym
+
+      Componeer.register(name.to_sym, self)
+    end
 
     def resolve_params(content_or_options, options)
-      case content_or_options
-      when Hash then [nil, content_or_options]
-      else [content_or_options, options]
+      if content_or_options.is_a?(Hash)
+        [nil, content_or_options]
+      else
+        [content_or_options, options]
       end
     end
 
     def classes
-      [base_class,
-       resolve_state_classes(base_class),
-       @options[:class]].flatten.compact_blank.join(' ')
+      @classes ||= [base_classes, custom_classes].flatten.compact_blank.uniq.join(' ')
     end
 
-    def resolve_state_classes(base_class)
-      state_classes.select { |(_state_class, condition)| condition }
-                   .map { |state_class, _| "#{base_class}--#{state_class}" }
+    def custom_classes
+      @custom_classes ||= options.delete(:class).to_s.split.compact_blank
     end
 
-    def base_class
-      raise NotImplementedError
-    end
+    def styles
+      @styles ||= begin
+        file_path = self.class.instance_method(:initialize).source_location[0]
+        styles_yaml_file = Rails.root.join(File.dirname(file_path), 'styles.yml')
 
-    def state_classes
-      []
+        File.exist?(styles_yaml_file) ? YAML.load(ERB.new(File.read(styles_yaml_file)).result) : {}
+      end
     end
   end
 end

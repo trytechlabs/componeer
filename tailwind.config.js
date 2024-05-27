@@ -5,16 +5,16 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/assets/stylesheets/**/*.css',
+    './app/previews/**/*.rb',
     './app/views/**/*.{erb,html}',
-    './spec/components/**/*.{rb}',
-    './gems/componeer/app/components/**/*.{rb,erb}',
+    './gems/componeer/app/components/**/*.{rb,erb,yml}',
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
         brand: {
-          50: '##eef2ff',
+          50: '#eef2ff',
           100: '#e0e7ff',
           200: '#c7d2fe',
           300: '#a5b4fc',
