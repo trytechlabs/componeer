@@ -1,9 +1,9 @@
 module Componeer
   class BaseComponent < ViewComponent::Base
-    def self.register_as(name)
-      name = name.to_s.to_sym
+    include Componeer::Helpers
 
-      Componeer.register(name.to_sym, self)
+    def self.register_as(name)
+      Componeer.register(name.to_s.to_sym, self)
     end
 
     def resolve_params(content_or_options, options)
