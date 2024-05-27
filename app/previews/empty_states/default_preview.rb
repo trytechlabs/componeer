@@ -6,6 +6,10 @@ module EmptyStates
       componeer.empty_state(resource_name: 'Article')
     end
 
+    def without_icon
+      componeer.empty_state(resource_name: 'Article', icon: nil)
+    end
+
     def using_another_icon
       componeer.empty_state(resource_name: 'Article', icon: :information_circle)
     end
