@@ -1,0 +1,53 @@
+<div class="w-full flex flex-col">
+  <div class="<%= @options[:overflow_x_auto] ? 'overflow-x-auto' : '' %>">
+    <div class="align-middle inline-block min-w-full">
+      <div class="<%= @options[:border] %> border-gray-200 py-2">
+        <% if @records.present? %>
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-white">
+              <tr>
+                <% columns.each do |column| %>
+                  <th scope="col" class="px-3 py-2 text-xs font-medium uppercase tracking-wider <%= "#{column.css_class} #{column.th_css_class}" %>">
+                    <% if column.link %>
+                      <%= link_to column.title, column.link[:to], column.link[:params] %>
+                    <% else %>
+                      <span><%= column.title %></span>
+                    <% end %>
+                  </th>
+                <% end %>
+              </tr>
+            </thead>
+
+            <tbody class="bg-white">
+              <% if @records.present? %>
+                <% @records.each do |record| %>
+                  <tr
+                    <% if record.respond_to?(:id) %>
+                      id="<%= dom_id(record) %>"
+                    <% end %>
+                    class="<%= [cycle('bg-white', @striped ? 'bg-gray-50' : 'bg-white'), @options[:tr_class].is_a?(Proc) ? @options[:tr_class].call(record) : @options[:tr_class]].compact_blank.join(' ') %>"
+                  >
+                    <% columns.each do |column| %>
+                      <td class="px-3 py-2 text-xs font-base tracking-wider" <%= "#{column.css_class} #{column.td_css_class}" %>">
+                        <%= column.call(record) %>
+                      </td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              <% else %>
+                <tr>
+                  <td colspan="<%= columns.count %>" class="px-3 py-2 text-xs font-base tracking-wider text-center">
+                    <%= "No #{records_resource_name} yet." %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+            <tfoot><%= footer %></tfoot>
+          </table>
+        <% else %>
+          <%= empty_state %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
