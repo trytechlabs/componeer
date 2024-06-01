@@ -1,3 +1,3 @@
 module Componeer
-  VERSION = '0.0.4a'.freeze
+  VERSION = '0.0.5a'.freeze
 end
