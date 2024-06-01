@@ -7,7 +7,7 @@ module.exports = {
     './app/assets/stylesheets/**/*.css',
     './app/previews/**/*.rb',
     './app/views/**/*.{erb,html}',
-    ...require('./javascript/componeer').contentPaths()
+    ...require('./gems/componeer/javascript').contentPaths
   ],
   darkMode: 'class',
   theme: {
