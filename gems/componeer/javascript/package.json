@@ -1,6 +1,6 @@
 {
   "name": "@trytechlabs/componeer",
-  "version": "0.0.1a",
+  "version": "0.0.2a",
   "main": "index.js",
   "files": [
     "src",
