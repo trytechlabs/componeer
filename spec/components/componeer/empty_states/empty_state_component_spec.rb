@@ -19,15 +19,19 @@ describe Componeer::EmptyStates::EmptyStateComponent, type: :component do
     it { is_expected.to have_text('No Articles') }
   end
 
-  context 'when using resource path' do
-    subject(:render) { render_inline(described_class.new(resource_name:, new_resource_path:)) }
+  context 'with new_resource_action' do
+    subject(:render) do
+      render_inline(described_class.new(resource_name:)) do |component|
+        component.with_new_resource_action do
+          'This is a new resource action with block'
+        end
+      end
+    end
 
     let(:resource_name) { 'Article' }
-    let(:new_resource_path) { '/articles/new' }
 
     it { is_expected.to have_xpath('//svg') }
     it { is_expected.to have_text('No Articles') }
-    it { is_expected.to have_text('Get started by creating a new Article.') }
-    it { is_expected.to have_link('New Article', href: new_resource_path) }
+    it { is_expected.to have_text('This is a new resource action with block') }
   end
 end

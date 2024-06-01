@@ -30,5 +30,11 @@ module Componeer
         File.exist?(styles_yaml_file) ? YAML.load(ERB.new(File.read(styles_yaml_file)).result) : {}
       end
     end
+
+    def i18n(value, **options)
+      I18n.t(value,
+             scope: "componeer.#{self.class.to_s.demodulize.underscore.gsub('_component', '')}",
+             **options)
+    end
   end
 end
