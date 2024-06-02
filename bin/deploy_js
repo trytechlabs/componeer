@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'net/http'
+require 'uri'
+
+rails_app_path = File.expand_path('../../config/environment', __FILE__)
+require rails_app_path
+
+class JsDeployer
+  def deploy
+    Dir.chdir('gems/componeer/javascript') do
+      puts "Switched to #{Dir.pwd}"
+      publish_js
+    end
+  end
+
+  private
+
+  def publish_js
+    puts "Publishing JavaScript..."
+    system('npm publish')
+  end
+end
+
+JsDeployer.new.deploy
