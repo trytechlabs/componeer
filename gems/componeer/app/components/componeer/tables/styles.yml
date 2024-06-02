@@ -8,8 +8,7 @@
       :left: 'text-left'
       :right: 'text-right'
       :center: 'text-center'
-  :row:
-    :default: 'border-b border-gray-200'
+  :row: 'border-b border-gray-200'
 
 :body:
   :column:

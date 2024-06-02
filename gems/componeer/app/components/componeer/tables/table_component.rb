@@ -30,7 +30,7 @@ module Componeer
         if level == :body
           styles.dig(level, :row, striped ? cycle(:striped, :default).to_sym : :default)
         else
-          styles.dig(level, :row, :default)
+          styles.dig(level, :row)
         end
       end
     end
