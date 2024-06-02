@@ -11,34 +11,33 @@ module Componeer
       renders_one :empty_state,
                   lambda { |resource_name: nil, icon: :exclamation|
                     EmptyStates::EmptyStateComponent.new(resource_name: resource_name ||
-                                                                       records_resource_name,
+                                                                        records_resource_name,
                                                          icon:)
                   }
 
       renders_one :footer
 
+      attr_reader :records, :striped, :tr_classes, :th_classes, :td_classes, :wrapper_classes,
+                  :table_classes, :options
+
+      DEFAULT_WRAPPER_CLASSES = 'w-full flex flex-col overflow-x-auto align-middle min-w-full ' \
+                                'border-b border-gray-200 py-2'.freeze
+      DEFAULT_TABLE_CLASSES = 'min-w-full divide-y divide-gray-200 bg-white'.freeze
+      DEFAULT_TH_CLASSES = 'px-3 py-2 text-xs font-medium uppercase tracking-wider'.freeze
+
       def initialize(records: nil, striped: true, options: {})
         @records = records
         @striped = striped
-        @options = options.reverse_merge(border: 'border-b')
+        @wrapper_classes = options.delete(:wrapper_classes) || DEFAULT_WRAPPER_CLASSES
+        @table_classes = options.delete(:table_classes) || DEFAULT_TABLE_CLASSES
+        @tr_classes = options.delete(:tr_classes) || ''
+        @th_classes = options.delete(:th_classes) || DEFAULT_TH_CLASSES
+        @td_classes = options.delete(:td_classes) || ''
+        @options = options
       end
 
-      def record_ids
-        ids = @records&.map { |record| record_id(record) } || []
-
-        ids&.all?(&:present?) ? ids : []
-      end
-
-      def record_id(record)
-        if @batch_actions_record_id
-          @batch_actions_record_id.call(record)
-        else
-          record.try(:id)
-        end
-      end
-
-      def records_resource_name
-        @records.name.underscore.humanize.downcase
+      def column_th_classes(column)
+        "#{th_classes} #{column.classes_for(:th)}"
       end
     end
   end

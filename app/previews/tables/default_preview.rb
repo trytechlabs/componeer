@@ -7,9 +7,29 @@ module Tables
       records = [Record.new('John', '18', 'male'), Record.new('Mary', '22', 'female')]
 
       componeer.table(records:) do |table|
-        table.with_column(title: 'Name') { |record| record.name }
-        table.with_column(title: 'Age') { |record| record.age }
-        table.with_column(title: 'Gender') { |record| record.gender }
+        table.with_column(title: 'Name', &:name)
+        table.with_column(title: 'Age', &:age)
+        table.with_column(title: 'Gender', &:gender)
+      end
+    end
+
+    def not_striped
+      records = [Record.new('John', '18', 'male'), Record.new('Mary', '22', 'female')]
+
+      componeer.table(records:, striped: false) do |table|
+        table.with_column(title: 'Name', &:name)
+        table.with_column(title: 'Age', &:age)
+        table.with_column(title: 'Gender', &:gender)
+      end
+    end
+
+    def with_empty_state
+      componeer.table(records: []) do |table|
+        table.with_empty_state(resource_name: 'user')
+
+        table.with_column(title: 'Name', &:name)
+        table.with_column(title: 'Age', &:age)
+        table.with_column(title: 'Gender', &:gender)
       end
     end
   end

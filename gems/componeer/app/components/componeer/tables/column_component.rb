@@ -1,19 +1,23 @@
 module Componeer
   module Tables
     class ColumnComponent < BaseComponent
-      attr_reader :title, :css_class, :link, :th_css_class, :td_css_class
+      attr_reader :title, :base_classes, :link, :th_classes, :td_classes
 
       def initialize(title, options = {}, &block)
         @title = title
-        @css_class = options[:css_class].presence || 'text-left'
-        @th_css_class = options[:th_css_class].presence
-        @td_css_class = options[:td_css_class].presence
         @link = options[:link]
+        @base_classes = options[:base_classes] || 'text-left'
+        @th_classes = options[:th_classes]
+        @td_classes = options[:td_classes]
         @block = block
       end
 
       def call(record)
         @block.call(record)
+      end
+
+      def classes_for(attr)
+        "#{base_classes} #{send("#{attr}_classes")}"
       end
     end
   end
