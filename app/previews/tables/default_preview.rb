@@ -49,7 +49,7 @@ module Tables
       componeer.table(records:) do |table|
         table.with_column(title: 'Name', class: 'w-32', &:name)
         table.with_column(title: 'Age', align: :center,
-                          class: { th: 'uppercase bg-purple-50',
+                          class: { th: 'uppercase bg-purple-50 text-green-500',
                                    td: 'text-green-600 bg-purple-50' }, &:age)
         table.with_column(title: 'Gender', &:gender)
       end
