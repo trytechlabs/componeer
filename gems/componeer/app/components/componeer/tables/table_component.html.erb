@@ -17,26 +17,18 @@
         </thead>
 
         <tbody>
-          <% if @records.present? %>
-            <% @records.each do |record| %>
-              <tr
-                <% if record.respond_to?(:id) %>
-                  id="<%= dom_id(record) %>"
-                <% end %>
-                class="<%= [cycle('bg-white', @striped ? 'bg-gray-50' : 'bg-white'), @options[:tr_class].is_a?(Proc) ? @options[:tr_class].call(record) : @options[:tr_class]].compact_blank.join(' ') %>"
-              >
-                <% columns.each do |column| %>
-                  <td class="px-3 py-2 text-xs font-base tracking-wider" <%= "#{column.base_classes} #{column.td_classes}" %>">
-                    <%= column.call(record) %>
-                  </td>
-                <% end %>
-              </tr>
-            <% end %>
-          <% else %>
-            <tr>
-              <td colspan="<%= columns.count %>" class="px-3 py-2 text-xs font-base tracking-wider text-center">
-                <%= "No #{records_resource_name} yet." %>
-              </td>
+          <% @records.each do |record| %>
+            <tr
+              <% if record.respond_to?(:id) %>
+                id="<%= dom_id(record) %>"
+              <% end %>
+              class="<%= default_tr_classes(record) %>"
+            >
+              <% columns.each do |column| %>
+                <td class="<%= column_td_classes(column) %>">
+                  <%= column.call(record) %>
+                </td>
+              <% end %>
             </tr>
           <% end %>
         </tbody>
