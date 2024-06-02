@@ -19,9 +19,9 @@ module Componeer
 
       attr_reader :records, :density, :striped, :options
 
-      def initialize(records: nil, striped: true, **options)
+      def initialize(records: nil, **options)
         @records = records
-        @striped = striped
+        @striped = options.delete(:striped) || true
         @density = options.delete(:density) || :default
         @options = options
       end
