@@ -1,0 +1,24 @@
+---
+:header:
+  :column:
+    :density:
+      :default: 'p-3 text-sm font-semibold'
+      :compact: 'p-1.5 text-xs font-semibold'
+    :alignment:
+      :left: 'text-left'
+      :right: 'text-right'
+      :center: 'text-center'
+  :row: 'bg-white border-b border-gray-200'
+
+:body:
+  :column:
+    :density:
+      :default: 'p-3 text-sm font-normal'
+      :compact: 'p-1.5 text-xs font-normal'
+    :alignment:
+      :left: 'text-left'
+      :right: 'text-right'
+      :center: 'text-center'
+  :row:
+    :default: 'bg-white'
+    :striped: 'bg-gray-50'

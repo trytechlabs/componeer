@@ -1,0 +1,33 @@
+<% if @records.present? %>
+  <table class="w-full">
+    <thead>
+      <tr class="<%= tr_classes(:header) %>">
+        <% columns.each do |column| %>
+          <th scope="col" class="<%= column.th_classes %>">
+            <%= column.title %>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @records.each do |record| %>
+        <tr
+          <% if record.respond_to?(:id) %>
+            id="<%= dom_id(record) %>"
+          <% end %>
+          class="<%= tr_classes %>"
+        >
+          <% columns.each do |column| %>
+            <td class="<%= column.td_classes %>">
+              <%= column.call(record) %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot><%= footer %></tfoot>
+  </table>
+<% else %>
+  <%= empty_state %>
+<% end %>
