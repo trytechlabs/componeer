@@ -8,7 +8,6 @@ module.exports = {
     './app/previews/**/*.rb',
     './app/views/**/*.{erb,html}',
     './gems/componeer/app/components/**/*.{rb,erb,yml}',
-    // ...require('./gems/componeer/javascript').contentPaths
   ],
   darkMode: 'class',
   theme: {
@@ -58,12 +57,12 @@ module.exports = {
         '5xl': '3rem',
         '6xl': '4rem',
         '7xl': '5rem',
-      }
-    }
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography')
-  ]
+    require('@tailwindcss/typography'),
+  ],
 }
