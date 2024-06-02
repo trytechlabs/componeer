@@ -18,18 +18,20 @@ module Componeer
       end
 
       def th_classes
-        [styles.dig(:header, :column, :density, density),
-         styles.dig(:header, :column, :alignment, alignment),
-         custom_classes[:th].to_s.split].flatten.compact_blank.uniq.join(' ')
+        attribute_classes(:th, key: :header)
       end
 
       def td_classes
-        [styles.dig(:body, :column, :density, density),
-         styles.dig(:body, :column, :alignment, alignment),
-         custom_classes[:td].to_s.split].flatten.compact_blank.uniq.join(' ')
+        attribute_classes(:td, key: :body)
       end
 
       private
+
+      def attribute_classes(attr, key:)
+        [styles.dig(key, :column, :density, density),
+         styles.dig(key, :column, :alignment, alignment),
+         custom_classes[attr].to_s.split].flatten.compact_blank.uniq.join(' ')
+      end
 
       def resolve_classes(hash_or_string)
         if hash_or_string.is_a?(String)
