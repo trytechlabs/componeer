@@ -1,41 +1,33 @@
-<div class="<%= wrapper_classes %>">
-  <div>
-    <% if @records.present? %>
-      <table class="<%= table_classes %>">
-        <thead>
-          <tr>
-            <% columns.each do |column| %>
-              <th scope="col" class="<%= column_th_classes(column) %>">
-                <% if column.link %>
-                  <%= link_to column.title, column.link[:to], column.link[:params] %>
-                <% else %>
-                  <span><%= column.title %></span>
-                <% end %>
-              </th>
-            <% end %>
-          </tr>
-        </thead>
+<% if @records.present? %>
+  <table>
+    <thead>
+      <tr class="<%= tr_classes(:header) %>">
+        <% columns.each do |column| %>
+          <th scope="col" class="<%= column.th_classes %>">
+            <%= column.title %>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
 
-        <tbody>
-          <% @records.each do |record| %>
-            <tr
-              <% if record.respond_to?(:id) %>
-                id="<%= dom_id(record) %>"
-              <% end %>
-              class="<%= default_tr_classes(record) %>"
-            >
-              <% columns.each do |column| %>
-                <td class="<%= column_td_classes(column) %>">
-                  <%= column.call(record) %>
-                </td>
-              <% end %>
-            </tr>
+    <tbody>
+      <% @records.each do |record| %>
+        <tr
+          <% if record.respond_to?(:id) %>
+            id="<%= dom_id(record) %>"
           <% end %>
-        </tbody>
-        <tfoot><%= footer %></tfoot>
-      </table>
-    <% else %>
-      <%= empty_state %>
-    <% end %>
-  </div>
-</div>
+          class="<%= tr_classes %>"
+        >
+          <% columns.each do |column| %>
+            <td class="<%= column.td_classes %>">
+              <%= column.call(record) %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot><%= footer %></tfoot>
+  </table>
+<% else %>
+  <%= empty_state %>
+<% end %>
