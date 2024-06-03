@@ -28,9 +28,9 @@ module Componeer
       private
 
       def attribute_classes(attr, key:)
-        [styles.dig(key, :column, :density, density),
-         styles.dig(key, :column, :alignment, alignment),
-         custom_classes[attr].to_s.split].flatten.compact_blank.uniq.join(' ')
+        to_classes_string([styles.dig(key, :column, :density, density),
+                           styles.dig(key, :column, :alignment, alignment),
+                           custom_classes[attr].to_s.split])
       end
 
       def resolve_classes(hash_or_string)
