@@ -5,11 +5,11 @@ module Componeer
 
       renders_one :new_resource_action
 
-      def initialize(resource_name:, icon: :exclamation, new_resource_path: nil, description: nil)
+      DEFAULT_OPTIONS = { icon: :exclamation, new_resource_path: nil, description: nil }.freeze
+
+      def initialize(resource_name:, **options)
         @resource_name = resource_name
-        @icon = icon
-        @new_resource_path = new_resource_path
-        @description = description
+        build_options(options)
       end
     end
   end
