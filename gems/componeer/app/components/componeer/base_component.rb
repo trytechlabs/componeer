@@ -36,5 +36,9 @@ module Componeer
              scope: "componeer.#{self.class.to_s.demodulize.underscore.gsub('_component', '')}",
              **options)
     end
+
+    def to_classes_string(array)
+      array.flatten.compact_blank.uniq.join(' ')
+    end
   end
 end

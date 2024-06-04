@@ -1,8 +1,8 @@
 module Tables
   class DefaultPreview < ApplicationPreview
     Record = Struct.new(:name, :age, :gender)
-    # Very basic button
-    # @!group Basic
+    # Very default table
+    # @!group Default
     def default
       records = [Record.new('John', '18', 'male'), Record.new('Mary', '22', 'female')]
 

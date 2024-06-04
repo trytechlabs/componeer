@@ -1,0 +1,16 @@
+---
+:size:
+  :small: text-xs px-1 p-0.5
+  :default: text-sm px-2 py-1
+  :large: text-base px-3 py-1.5
+:shape:
+  :rounded: rounded rounded-lg
+  :flat: rounded-none
+:color:
+  :gray: bg-gray-100 text-gray-700
+  :brand: bg-brand-100 text-brand-700
+  :blue: bg-blue-100 text-blue-700
+  :green: bg-green-100 text-green-700
+  :red: bg-red-100 text-red-700
+  :yellow: bg-yellow-100 text-yellow-700
+  :purple: bg-purple-100 text-purple-700
