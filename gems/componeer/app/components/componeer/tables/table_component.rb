@@ -19,11 +19,11 @@ module Componeer
 
       attr_reader :records, :density, :striped, :options
 
+      DEFAULT_OPTIONS = { striped: true, density: :default }.freeze
+
       def initialize(records: nil, **options)
         @records = records
-        @striped = options.delete(:striped) || true
-        @density = options.delete(:density) || :default
-        @options = options
+        build_options(options)
       end
 
       def tr_classes(level = :body)
