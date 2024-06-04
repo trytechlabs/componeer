@@ -40,5 +40,18 @@ module Componeer
     def to_classes_string(array)
       array.flatten.compact_blank.uniq.join(' ')
     end
+
+    private
+
+    def build_options(opts)
+      opts = opts.reverse_merge(self.class::DEFAULT_OPTIONS)
+
+      opts.each do |k, v|
+        instance_variable_set("@#{k}", v)
+        opts.delete(k)
+      end
+
+      @options = opts
+    end
   end
 end
