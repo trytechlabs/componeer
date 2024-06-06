@@ -1,7 +1,7 @@
 PATH
   remote: gems/componeer
   specs:
-    componeer (0.0.7b)
+    componeer (0.0.8a)
       inline_svg (~> 1.9, >= 1.9.0)
       view_component (~> 3.1, >= 3.1.0)
 

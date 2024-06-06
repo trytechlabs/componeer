@@ -53,5 +53,15 @@ module Componeer
 
       @options = opts
     end
+
+    def resolve_custom_classes(string_or_hash)
+      return {} unless string_or_hash
+
+      if string_or_hash.is_a?(String)
+        self.class::CUSTOM_CLASS_KEYS.index_with { |_key| string_or_hash }
+      else
+        string_or_hash
+      end
+    end
   end
 end

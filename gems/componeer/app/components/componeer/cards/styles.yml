@@ -3,14 +3,18 @@
   :size:
     :small: text-xs px-2 py-1
     :default: text-sm px-3 py-2
-  :shape:
-    :rounded: rounded-lg
-    :flat: rounded-none
   :color:
-    :default: bg-gray-50 text-gray-800
-    :brand: bg-brand-50 text-brand-800
-    :info: bg-sky-50 text-sky-800
-    :warning: bg-amber-50 text-amber-800
-    :danger: bg-red-50 text-red-800
-:header: rounded-t font-semibold
-:body:  rounded-b font-normal
+    :outline:
+      :default: bg-white text-gray-800 border-gray-300
+      :brand: bg-white text-brand-800 border-brand-300
+      :info: bg-white text-cyan-800 border-cyan-300
+      :warning: bg-white text-amber-800 border-amber-300
+      :danger: bg-white text-red-800 border-red-300
+    :primary:
+      :default: bg-gray-50 text-gray-800 border-gray-300
+      :brand: bg-brand-50 text-brand-800 border-brand-300
+      :info: bg-cyan-50 text-cyan-800 border-cyan-300
+      :warning: bg-amber-50 text-amber-800 border-amber-300
+      :danger: bg-red-50 text-red-800 border-red-300
+:header: font-semibold
+:body:  font-normal
