@@ -1,18 +1,18 @@
 module Componeer
   module Tables
     class ColumnComponent < BaseComponent
-      attr_reader :table, :title, :custom_classes, :alignment, :options
+      attr_reader :table, :title, :custom_classes, :align, :options
       delegate :density, to: :table
 
       CUSTOM_CLASS_KEYS = %i[th td].freeze
+      DEFAULT_OPTIONS = { align: :left }.freeze
 
       def initialize(table, title, **options, &block)
         @table = table
         @title = title
         @custom_classes = resolve_custom_classes(options.delete(:class))
-        @alignment = options.delete(:align) || :left
-        @options = options
         @block = block
+        build_options(options)
       end
 
       def call(record)
@@ -30,9 +30,9 @@ module Componeer
       private
 
       def attribute_classes(attr, key:)
-        to_classes_string([styles.dig(key, :column, :density, density),
-                           styles.dig(key, :column, :alignment, alignment),
-                           custom_classes[attr].to_s.split])
+        merge_tailwind_classes([styles.dig(key, :column, :density, density),
+                                styles.dig(key, :column, :alignment, align),
+                                custom_classes[attr].to_s.split])
       end
     end
   end
