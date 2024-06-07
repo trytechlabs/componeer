@@ -49,6 +49,11 @@ module Cards
       end
     end
 
+    def flat
+      componeer.card(mode: :outline, body_text: 'flat',
+                     class: 'bg-green-100 rounded-none border-green-300 w-96')
+    end
+
     private
 
     def lorem(number = 300)
