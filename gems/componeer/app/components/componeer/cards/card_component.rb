@@ -26,13 +26,13 @@ module Componeer
       end
 
       def header_styles
-        to_classes_string([common_styles, styles[:header], border_for(:header), shape_for(:header),
-                           custom_classes[:header]&.to_s&.split])
+        merge_tailwind_classes([common_styles, styles[:header], border_for(:header),
+                                shape_for(:header), custom_classes[:header]&.to_s&.split])
       end
 
       def body_styles
-        to_classes_string([common_styles, styles[:body], border_for(:body), shape_for(:body),
-                           custom_classes[:body]&.to_s&.split])
+        merge_tailwind_classes([common_styles, styles[:body], border_for(:body), shape_for(:body),
+                                custom_classes[:body]&.to_s&.split])
       end
 
       private
@@ -43,7 +43,7 @@ module Componeer
 
       def border_for(element)
         { header: primary? ? 'border-b' : 'border',
-          body: primary? ? '' : 'border border-t-0' }.fetch(element)
+          body: primary? ? '' : "border #{(header? && 'border-t-0').presence}" }.fetch(element)
       end
 
       def shape_for(element)

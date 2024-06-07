@@ -19,9 +19,14 @@ module Cards
       componeer.card(header_text: 'Card Title', body_text: lorem, color: :info, mode: :outline)
     end
 
+    def using_custom_classes
+      componeer.card(header_text: 'Card Title', body_text: lorem, mode: :outline, class: 'w-96')
+    end
+
     def using_custom_classes_separated
       componeer.card(header_text: 'Card Title', body_text: lorem,
-                     class: { header: 'text-green-600', body: 'text-purple-700' }, mode: :outline)
+                     class: { header: 'bg-green-50 text-green-600', body: 'text-purple-700' },
+                     mode: :outline)
     end
 
     def using_blocks
@@ -32,6 +37,14 @@ module Cards
 
         card.with_body do
           '<div class="text-purple-800">Body html</div>'.html_safe
+        end
+      end
+    end
+
+    def without_header
+      componeer.card(mode: :outline, class: 'w-96') do |card|
+        card.with_body(class: 'bg-gray-100 text-gray-500') do
+          'Foo'
         end
       end
     end
