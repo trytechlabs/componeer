@@ -26,5 +26,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_runtime_dependency 'inline_svg', '~> 1.9', '>= 1.9.0'
+  spec.add_runtime_dependency 'tailwind_merge', '~> 0.12.0'
   spec.add_runtime_dependency 'view_component', '~> 3.1', '>= 3.1.0'
 end

@@ -4,10 +4,12 @@ module Componeer
       attr_reader :table, :title, :custom_classes, :alignment, :options
       delegate :density, to: :table
 
+      CUSTOM_CLASS_KEYS = %i[th td].freeze
+
       def initialize(table, title, **options, &block)
         @table = table
         @title = title
-        @custom_classes = resolve_classes(options.delete(:class)) || {}
+        @custom_classes = resolve_custom_classes(options.delete(:class))
         @alignment = options.delete(:align) || :left
         @options = options
         @block = block
@@ -31,14 +33,6 @@ module Componeer
         to_classes_string([styles.dig(key, :column, :density, density),
                            styles.dig(key, :column, :alignment, alignment),
                            custom_classes[attr].to_s.split])
-      end
-
-      def resolve_classes(hash_or_string)
-        if hash_or_string.is_a?(String)
-          { th: hash_or_string, td: hash_or_string }
-        else
-          hash_or_string
-        end
       end
     end
   end

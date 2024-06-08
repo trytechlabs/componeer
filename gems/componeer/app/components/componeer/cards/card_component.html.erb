@@ -1,0 +1,11 @@
+<div>
+  <% if header? %>
+    <div class="<%= header_styles %>">
+      <%= header_text || header %>
+    </div>
+  <% end %>
+
+  <div class="<%= body_styles %>">
+    <%= body_text || body %>
+  </div>
+</div>

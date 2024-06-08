@@ -1,3 +1,5 @@
+require 'tailwind_merge'
+
 module Componeer
   class BaseComponent < ViewComponent::Base
     include Componeer::Helpers
@@ -37,8 +39,12 @@ module Componeer
              **options)
     end
 
+    def merge_tailwind_classes(*classes)
+      TailwindMerge::Merger.new.merge(to_classes_string(classes))
+    end
+
     def to_classes_string(array)
-      array.flatten.compact_blank.uniq.join(' ')
+      flattenize(array).join(' ')
     end
 
     private
@@ -52,6 +58,20 @@ module Componeer
       end
 
       @options = opts
+    end
+
+    def resolve_custom_classes(string_or_hash)
+      return {} unless string_or_hash
+
+      if string_or_hash.is_a?(String)
+        self.class::CUSTOM_CLASS_KEYS.index_with { |_key| string_or_hash }
+      else
+        string_or_hash
+      end
+    end
+
+    def flattenize(array)
+      [array].flatten.compact_blank.uniq
     end
   end
 end
