@@ -53,11 +53,5 @@ module Cards
       componeer.card(mode: :outline, body_text: 'flat',
                      class: 'bg-green-100 rounded-none border-green-300 w-96')
     end
-
-    private
-
-    def lorem(number = 300)
-      Faker::Lorem.paragraph_by_chars(number:, supplemental: false)
-    end
   end
 end

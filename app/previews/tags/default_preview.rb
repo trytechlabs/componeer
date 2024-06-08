@@ -14,6 +14,10 @@ module Tags
       componeer.tag('foo', shape: :flat)
     end
 
+    def circle
+      componeer.tag(lorem(20), shape: :circle, class: 'bg-purple-600 text-white')
+    end
+
     def large
       componeer.tag('foo', size: :large)
     end

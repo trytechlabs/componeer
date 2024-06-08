@@ -108,4 +108,22 @@ describe Componeer::Tags::TagComponent, type: :component do
       end
     end
   end
+
+  context 'when using custom classes' do
+    subject(:render) { render_inline(component) }
+
+    let(:component) do
+      described_class.new('Custom component', color: :green, class: 'bg-purple-300 text-white')
+    end
+
+    let(:expected_content) do
+      <<~HTML
+        <span class="text-sm px-2 py-1 rounded-lg bg-purple-300 text-white">
+          Custom component
+        </span>
+      HTML
+    end
+
+    it { is_expected.to eq(expected_content) }
+  end
 end

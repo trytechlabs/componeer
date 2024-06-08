@@ -1,11 +1,12 @@
 ---
 :size:
-  :small: text-xs px-1 p-0.5
+  :small: text-xs px-1.5 p-0.5
   :default: text-sm px-2 py-1
   :large: text-base px-3 py-1.5
 :shape:
-  :rounded: rounded rounded-lg
+  :rounded: rounded-lg
   :flat: rounded-none
+  :circle: :rounded-full
 :color:
   :gray: bg-gray-100 text-gray-700
   :brand: bg-brand-100 text-brand-700
