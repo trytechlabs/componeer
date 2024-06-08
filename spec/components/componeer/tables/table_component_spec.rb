@@ -3,15 +3,14 @@ require 'rails_helper'
 Record = Struct.new(:name, :age)
 
 describe Componeer::Tables::TableComponent, type: :component do
-  subject(:render) { render_inline(component) }
-
-  let(:component) do
-    described_class.new(records:) do |table|
+  subject(:rendered) do
+    render_inline(described_class.new(records:)) do |table|
       table.with_column(title: 'Name', &:name)
       table.with_column(title: 'Age', &:age)
     end
   end
-  let(:records) { [Record.new('John', 18), Record.new('Mary', 21)] }
+
+  let(:records) { [Record.new('John', '18'), Record.new('Mary', '21')] }
 
   it { is_expected.to have_table }
 
@@ -40,8 +39,8 @@ describe Componeer::Tables::TableComponent, type: :component do
   end
 
   context 'when compact table' do
-    let(:component) do
-      described_class.new(records:, density: :compacty) do |table|
+    subject(:rendered) do
+      render_inline(described_class.new(records:, density: :compacty)) do |table|
         table.with_column(title: 'Name', &:name)
         table.with_column(title: 'Age', &:age)
       end
@@ -55,6 +54,13 @@ describe Componeer::Tables::TableComponent, type: :component do
   end
 
   context 'when using custom align' do
+    subject(:rendered) do
+      render_inline(described_class.new(records:, density: :compacty)) do |table|
+        table.with_column(title: 'Name', &:name)
+        table.with_column(title: 'Age', &:age)
+      end
+    end
+
     let(:component) do
       described_class.new(records:) do |table|
         table.with_column(title: 'Name', &:name)
@@ -70,59 +76,51 @@ describe Componeer::Tables::TableComponent, type: :component do
   end
 
   context 'when using custom column classes' do
-    let(:component) do
-      described_class.new(records:) do |table|
+    subject(:rendered) do
+      render_inline(described_class.new(records:)) do |table|
         table.with_column(title: 'Name', class: 'w-32', &:name)
         table.with_column(title: 'Age', class: { th: 'uppercase', td: 'text-green-700' }, &:age)
       end
     end
 
-    it do
-      within('table') do
-        within('th') do
-          is_expected.to have_css('uppercase')
-        end
-      end
+    let(:expected_content) do
+      <<~HTML.squish
+        <table class="w-full">
+          <thead>
+            <tr class="bg-white border-b border-gray-200">
+              <th scope="col" class="p-3 text-sm font-semibold text-left w-32">
+                Name
+              </th>
+              <th scope="col" class="p-3 text-sm font-semibold text-left uppercase">
+                Age
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="bg-gray-50" >
+              <td class="p-3 text-sm font-normal text-left w-32">
+                John
+              </td>
+              <td class="p-3 text-sm font-normal text-left text-green-700">
+                18
+              </td>
+            </tr>
+            <tr  class="bg-white"
+            >
+            <td class="p-3 text-sm font-normal text-left w-32">
+              Mary
+            </td>
+            <td class="p-3 text-sm font-normal text-left text-green-700">
+              21
+            </td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      HTML
     end
 
-    it do
-      within('table') do
-        within('th') do
-          is_expected.to have_css('w-32')
-        end
-      end
-    end
-
-    it do
-      within('table') do
-        within('td') do
-          is_expected.to have_css('uppercase')
-        end
-      end
-    end
-
-    it do
-      within('table') do
-        within('td') do
-          is_expected.to have_css('w-32')
-        end
-      end
-    end
-
-    it do
-      within('table') do
-        within('td') do
-          is_expected.to have_no_css('uppercase')
-        end
-      end
-    end
-
-    it do
-      within('table') do
-        within('td') do
-          is_expected.to have_no_css('text-green-700')
-        end
-      end
-    end
+    it { expect(rendered.squish).to eq(expected_content) }
   end
 end
