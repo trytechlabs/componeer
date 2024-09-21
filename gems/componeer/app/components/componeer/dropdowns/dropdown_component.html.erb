@@ -1,0 +1,20 @@
+<div x-data="{ ...Componeer.dropdownComponent() }"
+     x-init="console.log(Componeer)"
+     @click="$event.stopPropagation(); $event.preventDefault(); toggleDisplay()"
+     @componeer--dropdown-closed.window="hide()"
+     class="relative inline-flex cursor-pointer">
+  <%= content %>
+
+  <div data-dropdown="true" x-show="display">
+    <div class="py-1 z-1 right-0 mt-2 divide-y divide-gray-100 rounded-md shadow-lg bg-white
+                ring-1 ring-black ring-opacity-5 focus:outline-none"
+         aria-orientation="vertical"
+         tabindex="-1"
+         @click.away="$dispatch('componeer--dropdown-closed')"
+         @keydown.window.escape="$dispatch('componeer--dropdown-closed')">
+      <% items.each do |item| %>
+        <%= item %>
+      <% end %>
+    </div>
+  </div>
+</div>

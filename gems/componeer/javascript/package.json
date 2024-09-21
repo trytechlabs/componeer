@@ -1,15 +1,17 @@
 {
   "name": "@trytechlabs/componeer",
-  "version": "0.0.2a",
-  "main": "index.js",
+  "version": "0.0.6a",
+  "main": "dist/bundle.js",
   "files": [
-    "src",
     "dist"
   ],
   "license": "MIT",
   "repository": "https://github.com/trytechlabs/componeer",
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "alpinejs": "^3.13.7"
   },
   "prettier": {
     "printWidth": 100,

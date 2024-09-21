@@ -11,6 +11,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
+    "@trytechlabs/componeer": "file:./gems/componeer/javascript",
     "alpinejs": "^3.13.7",
     "autoprefixer": "^10.4.19",
     "esbuild": "^0.19.7",
@@ -18,17 +19,20 @@
     "esbuild-rails": "^1.0.7",
     "inputmask": "^5.0.8",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.1",
-    "@trytechlabs/componeer": "file:./gems/componeer/javascript"
+    "tailwindcss": "^3.4.1"
   },
   "scripts": {
     "build": "node config/assets_builders/esbuild.config.mjs",
-    "build:css": "node config/assets_builders/cssbuild.config.mjs"
+    "build:css": "node config/assets_builders/cssbuild.config.mjs",
+    "packjs": "yarn rollup gems/componeer/javascript/index.js --file gems/componeer/javascript/dist/bundle.js --format iife"
   },
   "prettier": {
     "trailingComma": "es5",
     "tabWidth": 2,
     "semi": false,
     "singleQuote": true
+  },
+  "devDependencies": {
+    "rollup": "^3.29.5"
   }
 }

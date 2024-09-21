@@ -1,7 +1,9 @@
-const contentPaths = require('./src/contentPaths');
+import contentPaths from './src/contentPaths'
+import dropdownComponent from './src/dropdownComponent'
 
 const Componeer = {
-  contentPaths
+  contentPaths,
+  dropdownComponent,
 }
 
-export default Componeer;
+export default Componeer
