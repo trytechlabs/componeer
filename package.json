@@ -24,7 +24,7 @@
   "scripts": {
     "build": "node config/assets_builders/esbuild.config.mjs",
     "build:css": "node config/assets_builders/cssbuild.config.mjs",
-    "packjs": "yarn rollup gems/componeer/javascript/index.js --file gems/componeer/javascript/dist/bundle.js --format iife"
+    "build:components_js": "node gems/componeer/config/builder/esbuild.config.mjs"
   },
   "prettier": {
     "trailingComma": "es5",

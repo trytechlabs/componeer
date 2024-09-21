@@ -1,14 +1,12 @@
 const dropdownComponent = () => {
-  console.log('to aqui dentro do componente dropdownComponent.js')
-
   return {
     display: false,
-    toggleDisplay: () => {
-      self.display = !self.display
+    toggleDisplay: function() {
+      this.display = !this.display
     },
-    hide: () => {
-      self.display = false
-    },
+    hide: function() {
+      this.display = false
+    }
   }
 }
 

@@ -1,9 +1,11 @@
 {
   "name": "@trytechlabs/componeer",
   "version": "0.0.6a",
-  "main": "dist/bundle.js",
+  "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "index.js"
   ],
   "license": "MIT",
   "repository": "https://github.com/trytechlabs/componeer",
