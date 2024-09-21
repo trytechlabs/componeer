@@ -11,11 +11,17 @@ class JsDeployer
   def deploy
     Dir.chdir('gems/componeer/javascript') do
       puts "Switched to #{Dir.pwd}"
+      build_components_js
       publish_js
     end
   end
 
   private
+
+  def build_components_js
+    puts 'Building the components JS...'
+    system('yarn build:components_js')
+  end
 
   def publish_js
     puts "Publishing JavaScript..."

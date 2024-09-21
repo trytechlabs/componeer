@@ -9,7 +9,7 @@ const entryPoints = ['index.js']
 let upgradeComponeerModules = {
   name: 'Upgrade componeer lib on node_modules',
   setup(build) {
-    build.onEnd(result => {
+    build.onEnd(_result => {
       const command = 'yarn upgrade @trytechlabs/componeer'
       const { stdout, stderr } = execSync(command)
       if (stdout) { console.log(stdout.toString()) }
