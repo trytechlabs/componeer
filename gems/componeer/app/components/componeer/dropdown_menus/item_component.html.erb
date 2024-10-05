@@ -1,5 +1,5 @@
 <div @click="$dispatch('dropdown-closed')">
-  <%= send(@link_type, @url, **link_arguments) do %>
+  <%= send(@link_type, @url, class: classes) do %>
     <% @text.presence || content %>
   <% end %>
 </div>

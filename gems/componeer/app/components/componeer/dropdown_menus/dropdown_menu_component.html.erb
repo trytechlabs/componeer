@@ -16,10 +16,8 @@
        tabindex="-1"
        class="z-1 origin-top-right absolute top-10 right-0 divide-y divide-gray-100 rounded-md
               shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-    <ul>
-      <% items.each do |item| %>
-        <li><%= item %></li>
-      <% end %>
-    </ul>
+    <% items.each do |item| %>
+      <%= item %>
+    <% end %>
   </div>
 </div>
