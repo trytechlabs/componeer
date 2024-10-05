@@ -47,6 +47,14 @@ module Componeer
       flattenize(array).join(' ')
     end
 
+    def class_names(*args)
+      classes = []
+
+      args.each { |class_name| process_class_name(class_name, classes) }
+
+      classes.compact_blank.uniq.join(' ')
+    end
+
     private
 
     def build_options(opts)
@@ -72,6 +80,30 @@ module Componeer
 
     def flattenize(array)
       [array].flatten.compact_blank.uniq
+    end
+
+    def process_class_name(class_name, classes)
+      case class_name
+      when Hash then process_hash_class_name(class_name, classes)
+      when Array then process_array_class_name(class_name, classes)
+      else process_string_class_name(class_name, classes)
+      end
+    end
+
+    def process_hash_class_name(class_name, classes)
+      class_name.each do |key, value|
+        process_string_class_name(key, classes) if value
+      end
+    end
+
+    def process_array_class_name(class_name, classes)
+      class_name.each do |name|
+        process_class_name(name, classes)
+      end
+    end
+
+    def process_string_class_name(class_name, classes)
+      classes << class_name
     end
   end
 end
