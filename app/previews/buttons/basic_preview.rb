@@ -29,7 +29,9 @@ module Buttons
     # Button with block content
     def with_block
       componeer.button do
-        '<p class="underline">Hello from p tag</p>'.html_safe
+        <<~HTML.html_safe
+          <p class="underline">Hello from p tag</p>
+        HTML
       end
     end
   end
