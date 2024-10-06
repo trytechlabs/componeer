@@ -1,5 +1,5 @@
-const path = require('path');
-const { execSync } = require('child_process');
+import path from 'path'
+import { execSync } from 'child_process'
 
 const contentPaths = function() {
   try {
