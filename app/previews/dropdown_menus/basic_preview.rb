@@ -11,11 +11,7 @@ module DropdownMenus
           HTML
         end
 
-        <<~HTML.html_safe
-          <button type="button" class="border rounded-md p-2">
-            Dropdown Button
-          </button>
-        HTML
+        componeer.button('Dropdown Button')
       end
     end
   end
