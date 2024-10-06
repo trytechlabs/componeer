@@ -1,11 +1,11 @@
 module Componeer
   module Helpers
     def componeer
-      Helper.new(self)
+      ComponentRenderer.new(self)
     end
     alias c componeer unless method_defined?(:c)
 
-    class Helper
+    class ComponentRenderer
       delegate :render, to: :view_context
 
       def initialize(view_context)
