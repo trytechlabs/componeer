@@ -6,6 +6,7 @@ module Componeer
       register_as :dropdown_menu
 
       renders_many :items, ItemComponent
+      renders_one :trigger
     end
   end
 end

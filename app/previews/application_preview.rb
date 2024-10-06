@@ -1,4 +1,4 @@
-class ApplicationPreview < Lookbook::Preview
+class ApplicationPreview < ViewComponent::Preview
   include Componeer::Helpers
 
   private

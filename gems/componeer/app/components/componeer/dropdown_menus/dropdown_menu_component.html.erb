@@ -4,7 +4,8 @@
      @componeer-dropdown-closed.window="hide()"
      @keydown.window.escape="$dispatch('componeer-dropdown-closed')"
      class="relative inline-flex cursor-pointer">
-  <%= content %>
+
+  <%= trigger.presence || content %>
 
   <div x-show="display"
        x-transition:enter="transition ease-out duration-100"

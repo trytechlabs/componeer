@@ -16,7 +16,7 @@ let additionalPaths = function () {
           process.cwd(),
           'gems',
           args.path,
-          'javascript/index.js'
+          'javascript/dist/index.js'
         )
 
         return {
