@@ -1,11 +1,11 @@
 module Componeer
   module Helpers
     def componeer
-      @componeer ||= Helper.new(self)
+      ComponentRenderer.new(self)
     end
     alias c componeer unless method_defined?(:c)
 
-    class Helper
+    class ComponentRenderer
       delegate :render, to: :view_context
 
       def initialize(view_context)
@@ -13,10 +13,10 @@ module Componeer
       end
 
       def method_missing(method, *args, **kwargs, &)
-        if Componeer.registry.key?(method)
-          render(Componeer.registry[method].new(*args, **kwargs), &)
-        else
-          super
+        return super unless Componeer.registry.key?(method)
+
+        render(Componeer.registry[method].new(*args, **kwargs)) do |component|
+          component.instance_exec(component, &) if block_given?
         end
       end
 

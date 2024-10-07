@@ -5,11 +5,9 @@ Rails.start()
 import { FetchRequest } from '@rails/request.js'
 import '@hotwired/turbo-rails'
 import Alpine from 'alpinejs'
-import Componeer from '@trytechlabs/componeer'
+import Componeer from 'componeer'
 
 require('inputmask/dist/inputmask')
-
-// Internal depencencies
 
 window.Alpine = Alpine
 window.Rails = Rails

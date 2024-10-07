@@ -9,9 +9,11 @@ module Componeer
     end
 
     def register(name, component_klazz)
-      components[name] = component_klazz
+      components[name] = component_klazz.to_s
     end
 
-    delegate :[], to: :components
+    def [](name)
+      components[name].constantize
+    end
   end
 end

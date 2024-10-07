@@ -4,6 +4,8 @@ module Componeer
   class BaseComponent < ViewComponent::Base
     include Componeer::Helpers
 
+    attr_reader :options
+
     def self.register_as(name)
       Componeer.register(name.to_s.to_sym, self)
     end

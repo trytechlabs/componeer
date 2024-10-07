@@ -1,9 +1,7 @@
-import contentPaths from './src/contentPaths'
-import dropdownComponent from './src/dropdownComponent'
+import dropdownMenu from './src/dropdownMenu'
 
 const Componeer = {
-  contentPaths,
-  dropdownComponent,
+  dropdownMenu,
 }
 
 export default Componeer
