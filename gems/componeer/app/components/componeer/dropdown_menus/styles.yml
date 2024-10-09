@@ -1,2 +1,10 @@
 ---
-:base: w-full h-10 px-5 py-3 text-sm leading-5 font-normal text-gray-700 hover:bg-gray-100
+base: w-full h-10 px-5 py-3 text-sm leading-5 font-normal text-gray-700 hover:bg-gray-100
+menu:
+  alignment:
+    y:
+      up: bottom-10
+      down: top-10
+    x:
+      right: right-0
+      left: left-0

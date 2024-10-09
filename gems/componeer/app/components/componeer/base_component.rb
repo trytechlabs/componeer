@@ -31,7 +31,12 @@ module Componeer
         file_path = self.class.instance_method(:initialize).source_location[0]
         styles_yaml_file = Rails.root.join(File.dirname(file_path), 'styles.yml')
 
-        File.exist?(styles_yaml_file) ? YAML.load(ERB.new(File.read(styles_yaml_file)).result) : {}
+        if File.exist?(styles_yaml_file)
+          file_content = ERB.new(File.read(styles_yaml_file)).result
+          YAML.load(file_content).with_indifferent_access
+        else
+          {}
+        end
       end
     end
 
