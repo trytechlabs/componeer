@@ -10,7 +10,7 @@ module Componeer
       DEFAULT_ALIGNMENT = { x: :right, y: :down }.freeze
 
       def initialize(alignment: {})
-        @alignment = alignment.reverse_merge(DEFAULT_ALIGNMENT)
+        @alignment = alignment.with_indifferent_access.reverse_merge(DEFAULT_ALIGNMENT)
         @x_alignment = @alignment[:x]
         @y_alignment = @alignment[:y]
       end
