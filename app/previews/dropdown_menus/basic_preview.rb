@@ -15,7 +15,7 @@ module DropdownMenus
       end
     end
 
-    def oriented_to_left
+    def aligned_to_left
       componeer.dropdown_menu(alignment: { x: :left }) do |dropdown|
         dropdown.with_item(url: '#', text: 'Using text', class: 'underline text-blue-500')
         dropdown.with_item(url: '#') do
@@ -41,7 +41,7 @@ module DropdownMenus
       end
     end
 
-    def aligned_to_top_and_oriented_to_left
+    def aligned_to_top_and_left
       componeer.dropdown_menu(alignment: { y: :up, x: :left }) do |dropdown|
         dropdown.with_item(url: '#', text: 'Using text', class: 'underline text-blue-500')
         dropdown.with_item(url: '#') do
