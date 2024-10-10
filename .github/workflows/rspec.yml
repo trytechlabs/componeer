@@ -1,0 +1,51 @@
+name: RSpec
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    types: [ synchronize, opened, reopened ]
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+
+    env:
+      RAILS_ENV: test
+      NODE_ENV: test
+      CI: true
+      GEMFILE_RUBY_VERSION: 3.3.4
+
+    steps:
+    - uses: actions/checkout@v3.2.0
+
+    - name: Set up nodejs
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'yarn'
+
+    - uses: actions/cache@v3.3.1
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+    - uses: browser-actions/setup-chrome@v1
+      id: setup-chrome
+    - run: |
+        ${{ steps.setup-chrome.outputs.chrome-path }} --version
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.4
+        bundler-cache: true
+
+    - name: Build
+      run: |
+        yarn
+
+    - name: Main specs
+      run: bundle exec rspec
