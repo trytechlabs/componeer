@@ -9,7 +9,7 @@ module Componeer
       end
 
       def base_classes
-        [styles[:base]]
+        [styles[:item]]
       end
     end
   end
