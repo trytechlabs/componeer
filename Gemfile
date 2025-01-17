@@ -28,5 +28,5 @@ group :development, :test do
   gem 'rspec', '>= 3.12.0'
   gem 'rspec-rails', '~> 7.1'
   gem 'rubocop-rails', '~> 2.11', '>= 2.11.1'
-  gem 'rubocop-rspec', '~> 2.1', '>= 2.1.0'
+  gem 'rubocop-rspec', '~> 3.3'
 end
