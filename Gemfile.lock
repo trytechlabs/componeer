@@ -102,7 +102,7 @@ GEM
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
     erubi (1.13.1)
-    faker (3.4.1)
+    faker (3.5.1)
       i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
