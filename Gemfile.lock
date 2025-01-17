@@ -308,6 +308,7 @@ GEM
 PLATFORMS
   arm64-darwin-22
   arm64-darwin-23
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -315,6 +316,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.36)
   componeer!
+  concurrent-ruby
   cssbundling-rails (~> 1.4)
   debug
   faker

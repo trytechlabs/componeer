@@ -6,6 +6,7 @@ ruby '3.3.4'
 gem 'componeer', path: './gems/componeer'
 
 gem 'bootsnap', require: false
+gem 'concurrent-ruby'
 gem 'cssbundling-rails', '~> 1.4'
 gem 'importmap-rails'
 gem 'inline_svg'
