@@ -17,7 +17,7 @@ jobs:
       GEMFILE_RUBY_VERSION: 3.3.4
 
     steps:
-    - uses: actions/checkout@v3.2.0
+    - uses: actions/checkout@v4.2.2
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
