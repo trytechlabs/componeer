@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
+"@alpinejs/mask@^3.14.8":
+  version "3.14.8"
+  resolved "https://registry.yarnpkg.com/@alpinejs/mask/-/mask-3.14.8.tgz#75d34d5aaf99e81c9507ec75ecce3231a9f99970"
+  integrity sha512-zGKZXe0l/cTOyL0AFDTWEAz9OH5T6JphFvYhHZEsfURhkCLzBbD3zvgeXrd/GfcBgG4GkcPixBEd6Roouq1y0w==
+
 "@esbuild/aix-ppc64@0.24.2":
   version "0.24.2"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.24.2.tgz#38848d3e25afe842a7943643cbcd387cc6e13461"
@@ -688,11 +693,6 @@ import-meta-resolve@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/import-meta-resolve/-/import-meta-resolve-3.1.1.tgz#75d194ae465d17c15736f414734310c87d4c45d7"
   integrity sha512-qeywsE/KC3w9Fd2ORrRDUw6nS/nLwZpXgfrOc2IILvZYnCaEMd+D56Vfg9k4G29gIeVi3XKql1RQatME8iYsiw==
-
-inputmask@^5.0.8:
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/inputmask/-/inputmask-5.0.8.tgz#cd0f70b058c3291a0d4f27de25dbfc179c998bb4"
-  integrity sha512-1WcbyudPTXP1B28ozWWyFa6QRIUG4KiLoyR6LFHlpT4OfTzRqFfWgHFadNvRuMN1S9XNVz9CdNvCGjJi+uAMqQ==
 
 is-binary-path@~2.1.0:
   version "2.1.0"
