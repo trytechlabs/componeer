@@ -7,7 +7,7 @@ require 'rspec/rails'
 
 Rails.application.load_tasks
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Rails.root.glob('spec/support/**/*.rb').each { |f| require f }
 
 MaintainTestAssets.maintain!
 
