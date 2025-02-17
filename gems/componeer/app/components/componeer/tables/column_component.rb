@@ -15,9 +15,7 @@ module Componeer
         build_options(options)
       end
 
-      def call(record)
-        @block.call(record)
-      end
+      delegate :call, to: :@block
 
       def th_classes
         attribute_classes(:th, key: :header)

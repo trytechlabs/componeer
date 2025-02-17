@@ -4,7 +4,7 @@ require 'optparse'
 require 'net/http'
 require 'uri'
 
-rails_app_path = File.expand_path('../../config/environment', __FILE__)
+rails_app_path = File.expand_path('../config/environment', __dir__)
 require rails_app_path
 
 class JsDeployer
@@ -24,7 +24,7 @@ class JsDeployer
   end
 
   def publish_js
-    puts "Publishing JavaScript..."
+    puts 'Publishing JavaScript...'
     system('npm publish')
   end
 end
