@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@alpinejs/mask": "^3.14.8",
-    "@hotwired/turbo-rails": "^8.0.12",
+    "@hotwired/turbo-rails": "^8.0.13",
     "@rails/request.js": "^0.0.11",
     "@rails/ujs": "^7.1.501",
     "@tailwindcss/aspect-ratio": "^0.4.2",
