@@ -14,7 +14,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@trytechlabs/componeer": "file:./gems/componeer/javascript",
     "alpinejs": "^3.13.7",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "esbuild": "^0.25.0",
     "esbuild-plugin-polyfill-node": "^0.3.0",
     "esbuild-rails": "^1.0.7",
