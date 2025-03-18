@@ -33,6 +33,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "rollup": "^4.34.8"
+    "rollup": "^4.36.0"
   }
 }
