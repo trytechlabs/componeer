@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency 'inline_svg', '~> 1.9', '>= 1.9.0'
-  spec.add_dependency 'tailwind_merge', '>= 0.12', '< 0.17'
+  spec.add_dependency 'tailwind_merge', '>= 0.12', '< 1.2'
   spec.add_dependency 'view_component', '~> 3.1', '>= 3.1.0'
 end
