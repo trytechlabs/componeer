@@ -5,7 +5,7 @@
     "node": ">=18.18.0 <19.0.0"
   },
   "dependencies": {
-    "@alpinejs/mask": "^3.14.8",
+    "@alpinejs/mask": "^3.14.9",
     "@hotwired/turbo-rails": "^8.0.13",
     "@rails/request.js": "^0.0.11",
     "@rails/ujs": "^7.1.501",
@@ -33,6 +33,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "rollup": "^4.34.8"
+    "rollup": "^4.37.0"
   }
 }
