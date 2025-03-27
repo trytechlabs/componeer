@@ -59,9 +59,9 @@ module Componeer
     def build_options(opts)
       opts = opts.reverse_merge(self.class::DEFAULT_OPTIONS)
 
-      opts.each do |k, v|
-        instance_variable_set(:"@#{k}", v)
-        opts.delete(k)
+      opts.each do |key, value|
+        instance_variable_set(:"@#{key}", value)
+        opts.delete(key)
       end
 
       @options = opts
