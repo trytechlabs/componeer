@@ -60,7 +60,7 @@ module Componeer
       opts = opts.reverse_merge(self.class::DEFAULT_OPTIONS)
 
       opts.each do |k, v|
-        instance_variable_set("@#{k}", v)
+        instance_variable_set(:"@#{k}", v)
         opts.delete(k)
       end
 
