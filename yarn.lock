@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@alpinejs/mask@^3.14.8":
-  version "3.14.8"
-  resolved "https://registry.yarnpkg.com/@alpinejs/mask/-/mask-3.14.8.tgz#75d34d5aaf99e81c9507ec75ecce3231a9f99970"
-  integrity sha512-zGKZXe0l/cTOyL0AFDTWEAz9OH5T6JphFvYhHZEsfURhkCLzBbD3zvgeXrd/GfcBgG4GkcPixBEd6Roouq1y0w==
+"@alpinejs/mask@^3.14.9":
+  version "3.14.9"
+  resolved "https://registry.yarnpkg.com/@alpinejs/mask/-/mask-3.14.9.tgz#a7b3f0e2648ad01f50189c6d506275fef331dce4"
+  integrity sha512-duuEo1tkrpxqBXISXWU6y4pnIdp22OzmgrQ0Q+W4R/mG2545rl360ihI3Dolbv2dS2E3C0sFsmS0pZcpFaGOZw==
 
 "@esbuild/aix-ppc64@0.25.1":
   version "0.25.1"
