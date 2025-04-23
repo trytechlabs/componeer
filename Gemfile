@@ -29,7 +29,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 7.1'
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-capybara', '~> 2.19'
-  gem 'rubocop-performance', '~> 1.16'
+  gem 'rubocop-performance', '~> 1.25'
   gem 'rubocop-rails', '~> 2.30'
   gem 'rubocop-rspec', '~> 3.6'
   gem 'rubocop-rspec_rails', '~> 2.19'
