@@ -1,0 +1,56 @@
+<div class="bg-gradient-to-r from-brand-600 to-brand-900 w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center">
+      <!-- Main Heading -->
+      <h1 class="text-4xl tracking-tight font-bold text-white text-6xl mb-6">
+        Bootstrap Ruby projects instantly<span class="italic text-7xl font-extrabold">!</span>
+      </h1>
+
+      <span class="mt-10 block text-brand-200 text-3xl">
+        Pre-configured gem bundles & scripts marketplace.
+      </span>
+
+      <p class="max-w-md mx-auto text-base text-brand-100 sm:text-md md:text-lg md:max-w-3xl">
+        Stop configuring gems manually. Find ready-to-use template scripts for Rails, Sinatra, and
+        other Ruby frameworks.
+      </p>
+
+      <!-- Search Form -->
+      <div class="mt-10 w-full mx-auto">
+        <%= form_with url: root_path,
+                      method: :get,
+                      class: "flex flex-col sm:flex-row gap-3 justify-center w-full sm:max-w-3xl " \
+                             "mx-auto",
+                      data: { turbo: false } do |f| %>
+          <%= f.text_field :term,
+                           class: "w-full sm:w-10/12 rounded-lg px-4 py-5 border-0 " \
+                                  "text-brand-300 bg-transparent ring-2 ring-brand-300 " \
+                                  "placeholder:text-brand-400 placeholder:italic " \
+                                  "focus:text-brand-100 text-xl sm:leading-6 " \
+                                  "focus:ring-2 focus:ring-brand-100",
+                           placeholder: "Search templates (e.g., rspec, rubocop, devise...)" %>
+          <%= f.submit "Search",
+                       class: "w-full sm:w-2/12 rounded-lg bg-brand-600 px-8 py-3 text-lg " \
+                              "font-semibold text-white shadow-sm hover:bg-brand-400 " \
+                              "ring-2 ring-brand-600 focus:ring-brand-400 " \
+                              "focus-visible:outline focus-visible:outline-2 " \
+                              "focus-visible:outline-offset-2 focus-visible:outline-brand-400" %>
+        <% end %>
+      </div>
+
+      <!-- Supporting Text -->
+      <p class="mt-3 text-sm text-white">
+        500+ Template Scripts • Popular Gem Combinations • Instant Setup
+      </p>
+
+      <!-- Call to Action -->
+      <div class="mt-10">
+        <%= link_to 'Get started',
+                    'https://github.com/trytechlabs/componeer',
+                    target: '_blank',
+                    class: "inline-flex items-center rounded-full bg-white px-8 py-4 text-lg " \
+                           "font-semibold text-brand-600 shadow-lg hover:bg-brand-50" %>
+      </div>
+    </div>
+  </div>
+</div>

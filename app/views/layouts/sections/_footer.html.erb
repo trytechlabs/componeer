@@ -1,0 +1,86 @@
+<footer class="bg-gray-900 text-gray-300 w-full">
+  <div class="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info Column -->
+      <div class="space-y-4">
+        <h3 class="text-white text-lg font-semibold">About us</h3>
+        <div class="flex items-center">
+          <%= link_to root_path, class: "flex flex-col items-end" do %>
+            <div class="flex text-4xl">
+              <span class="text-gray-500 font-semibold">Compo</span>
+              <span class="text-brand-600 font-semibold -ml-1">neer</span>
+            </div>
+            <div class="flex text-xs text-gray-400 font-light -mt-3.5 mr-1">
+              <em>by TryTech Labs</em>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-lg text-gray-400 leading-6 tracking-wide font-light">
+          We're dedicated to delivering exceptional solutions and creating meaningful experiences
+          for our clients.
+        </p>
+        <div class="flex items-center space-x-4">
+          <%= link_to "#", class: "text-gray-400 hover:text-white transition-colors" do %>
+            <%= inline_svg_tag "outline/brand-facebook", class: "w-6 h-6" %>
+          <% end %>
+
+          <%= link_to "#", class: "text-gray-400 hover:text-white transition-colors" do %>
+            <%= inline_svg_tag "outline/brand-twitter", class: "w-6 h-6" %>
+          <% end %>
+
+          <%= link_to "#", class: "text-gray-400 hover:text-white transition-colors" do %>
+            <%= inline_svg_tag "outline/brand-linkedin", class: "w-6 h-6" %>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="space-y-4">
+        <h3 class="text-white text-lg font-semibold">Quick links</h3>
+        <ul class="space-y-2">
+          <li>
+            <%= link_to "Home", root_path, class: "hover:text-white transition-colors hover:underline" %>
+          </li>
+          <li>
+            <%= link_to "About", '#', class: "hover:text-white transition-colors hover:underline" %>
+          </li>
+          <li>
+            <%= link_to "Services", '#', class: "hover:text-white transition-colors hover:underline" %>
+          </li>
+          <li>
+            <%= link_to "Contact", '#', class: "hover:text-white transition-colors hover:underline" %>
+          </li>
+          <li>
+            <%= link_to "Privacy Policy", '#', class: "hover:text-white transition-colors hover:underline" %>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="space-y-4">
+        <h3 class="text-white text-lg font-semibold">Contact us</h3>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <%= inline_svg_tag "outline/map-pin", class: "w-6 h-6 text-brand-300 font-light" %>
+            <span class="text-sm">123 Business Street, Suite 100, City, State 12345</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <%= inline_svg_tag "outline/phone", class: "w-6 h-6 text-brand-300 font-light" %>
+            <span class="text-sm">(555) 123-4567</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <%= inline_svg_tag "outline/mail", class: "w-6 h-6 text-brand-300 font-light" %>
+            <%= link_to 'alpha@trytechlabs.com',
+                        'mailto:alpha@trytechlabs.com',
+                        class: 'text-sm hover:text-white transition-colors hover:underline' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+      <p>&copy; <%= Time.current.year %> TryTech Labs. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

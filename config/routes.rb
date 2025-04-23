@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  mount Lookbook::Engine, at: '/'
+  get "home/index"
+  mount Lookbook::Engine, at: '/docs'
+
+  root 'home#index'
 end

@@ -1,0 +1,51 @@
+<header class="bg-white shadow w-full px-4 lg:px-8">
+  <div class="flex justify-between items-center h-16 max-w-7xl mx-auto">
+    <!-- Logo/Brand -->
+    <div class="flex-shrink-0">
+      <%= link_to root_path, class: "flex flex-col items-end" do %>
+        <div class="flex text-4xl">
+          <span class="text-gray-500 font-semibold">Compo</span>
+          <span class="text-brand-600 font-semibold -ml-1">neer</span>
+        </div>
+        <div class="flex text-xs text-gray-400 font-light -mt-3.5 mr-1">
+          <em>by TryTech Labs</em>
+        </div>
+      <% end %>
+    </div>
+
+    <nav class="flex items-center space-x-4 justify-end">
+      <!-- Navigation Links -->
+      <%= link_to '#',
+          class: "flex items-center px-2 py-1 text-gray-800 space-x-2 " \
+                 "border-b-3 border-transparent hover:border-brand-600 " \
+                 "#{current_page?('#') ? 'border-brand-600' : ''}" do %>
+        Explore
+      <% end %>
+
+      <%= link_to '#',
+          class: "flex items-center px-2 py-1 text-gray-800 space-x-2 " \
+                 "border-b-3 border-transparent hover:border-brand-600 " \
+                 "#{current_page?('#') ? 'border-brand-600' : ''}" do %>
+        Docs
+      <% end %>
+
+      <%= link_to '#',
+          class: "flex items-center px-2 py-1 text-gray-800 space-x-2 " \
+                 "border-b-3 border-transparent hover:border-brand-600 " \
+                 "#{current_page?('#') ? 'border-brand-600' : ''}" do %>
+        Blog
+      <% end %>
+
+      <!-- User Menu -->
+      <div class="flex items-center">
+        <div class="relative pl-8">
+          <%= link_to 'Get started',
+                      'https://github.com/trytechlabs/componeer',
+                      target: '_blank',
+                      class: "px-5 py-3 bg-brand-100 rounded-md hover:bg-brand-300
+                              text-brand-600" %>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
