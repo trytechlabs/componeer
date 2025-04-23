@@ -30,7 +30,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-capybara', '~> 2.19'
   gem 'rubocop-performance', '~> 1.25'
-  gem 'rubocop-rails', '~> 2.30'
+  gem 'rubocop-rails', '~> 2.31'
   gem 'rubocop-rspec', '~> 3.6'
   gem 'rubocop-rspec_rails', '~> 2.19'
 end
