@@ -15,7 +15,7 @@
     "@trytechlabs/componeer": "file:./gems/componeer/javascript",
     "alpinejs": "^3.13.7",
     "autoprefixer": "^10.4.21",
-    "esbuild": "^0.25.1",
+    "esbuild": "^0.25.2",
     "esbuild-plugin-polyfill-node": "^0.3.0",
     "esbuild-rails": "^1.0.7",
     "postcss": "^8.5.3",
