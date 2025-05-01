@@ -26,7 +26,7 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'faker'
   gem 'rspec', '>= 3.12.0'
-  gem 'rspec-rails', '~> 7.1'
+  gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-capybara', '~> 2.19'
   gem 'rubocop-performance', '~> 1.25'
