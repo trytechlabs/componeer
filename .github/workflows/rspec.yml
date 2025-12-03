@@ -19,7 +19,7 @@ jobs:
       GEMFILE_RUBY_VERSION: 3.3.4
 
     steps:
-    - uses: actions/checkout@v4.2.2
+    - uses: actions/checkout@v6.0.1
 
     - name: Set up nodejs
       uses: actions/setup-node@v4
